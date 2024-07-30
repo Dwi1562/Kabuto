@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/index', function () {
+    return view('dashboard');
 });
 
 Route::get('/login', function () {
@@ -22,5 +22,17 @@ Route::get('/login', function () {
 });
 
 Route::get('/registrasi', function () {
-    return view('registrasi');
+    return view('register');
+});
+
+Route::get('/transaksi', function () {
+    return view('transaksi');
+});
+
+Route::get('/produk', function () {
+    return view('produk');
+});
+
+Route::get('/kategori', function () {
+    return view('kategori');
 });
