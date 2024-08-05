@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,26 +14,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', function () {
-    return view('dashboard');
+Route::get('/template', function() {
+    return view('template');
 });
 
-Route::get('/login', function () {
+Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/registrasi', function () {
+Route::get('/user', function () {
+    $data = [
+        'content'  => 'admin.user.index'
+    ];
+    return view('admin.layouts.wrapper', $data);
+});
+
+Route::get('/dashboard', function() {
+    return view('dashboard');
+});
+
+Route::get('/login', function() {
+    return view('login');
+});
+
+Route::get('/registrasi', function() {
     return view('register');
 });
 
-Route::get('/transaksi', function () {
-    return view('transaksi');
-});
+Route::resource('/products', ProductController::class);
 
-Route::get('/produk', function () {
-    return view('produk');
-});
-
-Route::get('/kategori', function () {
+Route::get('/kategori', function() {
     return view('kategori');
+});
+
+Route::get('/transaksi', function() {
+    return view('transaksi');
 });

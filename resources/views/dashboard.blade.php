@@ -13,7 +13,7 @@
     <title>Kabuto - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -32,7 +32,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index">
+                <a class="nav-link" href="dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -54,7 +54,7 @@
             <!-- Nav Item - Transaksi -->
             <li class="nav-item">
                 <a class="nav-link" href="transaksi">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fas fa-fw fa-money-bill"></i>
                     <span>Transaksi</span></a>
             </li>
 
@@ -62,20 +62,37 @@
 
             <!-- Nav Item - Produk -->
             <li class="nav-item">
-                <a class="nav-link" href="produk">
-                    <i class="fas fa-fw fa-table"></i>
+                <a class="nav-link" href="products">
+                    <i class="fas fa-fw fa-briefcase"></i>
                     <span>Produk</span></a>
             </li>
+
+
+            <hr class="sidebar-divider my-0">
+
 
             <!-- Nav Item - Kategori-->
             <li class="nav-item">
                 <a class="nav-link" href="kategori">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-list"></i>
                     <span>Kategori</span></a>
             </li>
 
+
+            <hr class="sidebar-divider my-0">
+
+            
+            <!-- Nav Item - User-->
+            <li class="nav-item">
+                <a class="nav-link" href="user">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>User</span></a>
+                </li>
+                
+                
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -84,6 +101,7 @@
 
         </ul>
         <!-- End of Sidebar -->
+
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -102,6 +120,7 @@
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
+
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -154,11 +173,11 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{ asset('/js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('/js/sb-admin-2.min.js') }}"></script>
