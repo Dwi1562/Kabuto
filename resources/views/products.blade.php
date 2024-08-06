@@ -5,8 +5,8 @@
     <div class="container-fluid">
 
         <h2>Product List</h2>
-        <a href="{{ route('products.create') }}" class="btn btn-primary">Add Product</a>
-        <table class="table table-striped">
+        <a href="{{ route('products.create') }}" class="btn btn-primary">Add</a>
+        <table class="table mt-3">
             <thead>
                 <th>Name</th>
                 <th>Description</th>
@@ -33,8 +33,5 @@
                 @endforeach
             </tbody>
         </table>
-
-
     </div>
-    <!-- /.container-fluid -->
 @endsection

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +44,7 @@ Route::get('/registrasi', function() {
 
 Route::resource('/products', ProductController::class);
 
-Route::get('/kategori', function() {
-    return view('kategori');
-});
+Route::resource('/categories', CategoryController::class);
 
 Route::get('/transaksi', function() {
     return view('transaksi');

@@ -73,7 +73,7 @@
 
             <!-- Nav Item - Kategori-->
             <li class="nav-item">
-                <a class="nav-link" href="kategori">
+                <a class="nav-link" href="categories">
                     <i class="fas fa-fw fa-list"></i>
                     <span>Kategori</span></a>
             </li>
