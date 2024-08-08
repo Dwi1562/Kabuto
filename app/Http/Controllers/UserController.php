@@ -9,7 +9,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('admin.user.index');
+        $users = User::all();
+        return view('admin.user.index', compact('users'));
     }
 
     public function create()
@@ -25,19 +26,27 @@ class UserController extends Controller
             'password' => 'required|min:6'
         ]);
 
+        $user = new User([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password'))
+        ]);
+
+        $user->save();
 
         return redirect('/users')->with('success', 'User has been added');
     }
 
     public function show($id)
     {
-        return view('admin.user.show');
+        $user = User::find($id);
+        return view('admin.user.show', compact('user'));
     }
 
     public function edit($id)
     {
-        
-        return view('admin.user.edit');
+        $user = User::find($id);
+        return view('admin.user.edit', compact('user'));
     }
 
     public function update(Request $request, $id)
@@ -48,11 +57,24 @@ class UserController extends Controller
             'password' => 'nullable|min:6'
         ]);
 
+        $user = User::find($id);
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->get('password'));
+        }
+
+        $user->save();
+
         return redirect('/users')->with('success', 'User has been updated');
     }
 
     public function destroy($id)
     {
+        $user = User::find($id);
+        $user->delete();
+
         return redirect('/users')->with('success', 'User has been deleted');
     }
 }
