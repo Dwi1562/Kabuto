@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +22,6 @@ Route::get('/template', function() {
 
 Route::get('/', function () {
     return view('login');
-});
-
-Route::get('/user', function () {
-    $data = [
-        'content'  => 'admin.user.index'
-    ];
-    return view('admin.layouts.wrapper', $data);
 });
 
 Route::get('/dashboard', function() {
@@ -49,3 +43,5 @@ Route::resource('/categories', CategoryController::class);
 Route::get('/transaksi', function() {
     return view('transaksi');
 });
+
+Route::resource('/users', UserController::class);

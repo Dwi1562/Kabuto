@@ -9,7 +9,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Description</th>
-                    <th>Actions</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

@@ -15,6 +15,7 @@
             <textarea name="description" id="description" class="form-control">{{ $category->description }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Update Category</button>
+        <button type="submit" class="btn btn-danger">Cancel</button>
     </form>
 </div>
 @endsection
